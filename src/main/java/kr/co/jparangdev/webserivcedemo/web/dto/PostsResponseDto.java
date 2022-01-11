@@ -18,7 +18,11 @@ public class PostsResponseDto {
 		this.author = author;
 	}
 
-	public static PostsResponseDto fromEntity(Posts posts) {
-		return new PostsResponseDto(posts.getId(), posts.getTitle(), posts.getContent(), posts.getAuthor());
+	public PostsResponseDto(Posts posts) {
+		this.id = posts.getId();
+		this.title = posts.getTitle();
+		this.content = posts.getContent();
+		this.author = posts.getAuthor();
 	}
+
 }

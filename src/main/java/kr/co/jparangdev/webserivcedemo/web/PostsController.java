@@ -1,5 +1,6 @@
 package kr.co.jparangdev.webserivcedemo.web;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,5 +34,11 @@ public class PostsController {
 	public Long udpate(@PathVariable("id") Long id, @RequestBody
 	PostsRequestUpdateDto request) {
 		return service.update(id, request);
+	}
+
+	@DeleteMapping("/api/v1/posts/{id}")
+	public Long delete(@PathVariable("id") Long id){
+		service.delete(id);
+		return id;
 	}
 }
