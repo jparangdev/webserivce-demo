@@ -40,13 +40,15 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 		OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
 		User user = saveOrUpdate(attributes);
-
 		httpSession.setAttribute("user", new SessionUser(user));
 
-
-		return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())), attributes.getAttributes(), attributes.getNameAttributeKey());
+		return new DefaultOAuth2User(
+			Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey()))
+			, attributes.getAttributes()
+			, attributes.getNameAttributeKey());
 	}
 
+	// 구글에서 받아온 유저의 정보가 변경되면 같이 변경되도록 처리
 	private User saveOrUpdate(OAuthAttributes attributes) {
 		User user = userRepository.findByEmail(attributes.getEmail())
 			.map(entity -> entity.update(attributes.getName(), attributes.getPicture())).orElse(attributes.toEntity());
