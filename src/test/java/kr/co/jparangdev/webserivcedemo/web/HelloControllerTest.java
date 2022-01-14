@@ -7,15 +7,24 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
-@WebMvcTest(HelloController.class)
+import kr.co.jparangdev.webserivcedemo.config.auth.SecurityConfig;
+
+@WebMvcTest(controllers = HelloController.class,
+excludeFilters = {
+	@ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)
+})
 class HelloControllerTest {
 
 	@Autowired
 	MockMvc mockMvc;
 
 	@Test
+	@WithMockUser(roles = "USER")
 	public void Hello_테스트() throws Exception {
 		String hello = "hello jparangdev !";
 
@@ -25,6 +34,7 @@ class HelloControllerTest {
 	}
 
 	@Test
+	@WithMockUser(roles = "USER")
 	public void Hello_Dto_테스트() throws Exception {
 		String name = "jparangdev";
 		int amount= 100;
