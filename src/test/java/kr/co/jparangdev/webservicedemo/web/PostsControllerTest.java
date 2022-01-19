@@ -1,4 +1,4 @@
-package kr.co.jparangdev.webserivcedemo.web;
+package kr.co.jparangdev.webservicedemo.web;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.*;

@@ -1,4 +1,4 @@
-package kr.co.jparangdev.webserivcedemo.domain;
+package kr.co.jparangdev.webservicedemo.domain;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -8,9 +8,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-
-import kr.co.jparangdev.webservicedemo.domain.Posts;
-import kr.co.jparangdev.webservicedemo.domain.PostsRepository;
 
 @DataJpaTest
 class PostsRepositoryTest {

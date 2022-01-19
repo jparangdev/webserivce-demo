@@ -1,4 +1,4 @@
-package kr.co.jparangdev.webserivcedemo.web;
+package kr.co.jparangdev.webservicedemo.web;
 
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -13,7 +13,6 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import kr.co.jparangdev.webservicedemo.config.auth.SecurityConfig;
-import kr.co.jparangdev.webservicedemo.web.HelloController;
 
 @WebMvcTest(controllers = HelloController.class,
 excludeFilters = {

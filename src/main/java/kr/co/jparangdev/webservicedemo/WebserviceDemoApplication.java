@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 //@EnableJpaAuditing // auditing 이 뭔지 다시 공부해보기
 @SpringBootApplication
-public class WebserivceDemoApplication {
+public class WebserviceDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WebserivceDemoApplication.class, args);
+		SpringApplication.run(WebserviceDemoApplication.class, args);
 	}
 
 }
