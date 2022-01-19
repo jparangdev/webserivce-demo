@@ -12,7 +12,8 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
-import kr.co.jparangdev.webserivcedemo.config.auth.SecurityConfig;
+import kr.co.jparangdev.webservicedemo.config.auth.SecurityConfig;
+import kr.co.jparangdev.webservicedemo.web.HelloController;
 
 @WebMvcTest(controllers = HelloController.class,
 excludeFilters = {

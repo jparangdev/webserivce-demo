@@ -5,9 +5,7 @@ import static org.springframework.security.test.web.servlet.setup.SecurityMockMv
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,23 +14,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import kr.co.jparangdev.webserivcedemo.domain.Posts;
-import kr.co.jparangdev.webserivcedemo.domain.PostsRepository;
-import kr.co.jparangdev.webserivcedemo.web.dto.PostsRequestSaveDto;
-import kr.co.jparangdev.webserivcedemo.web.dto.PostsRequestUpdateDto;
+import kr.co.jparangdev.webservicedemo.domain.Posts;
+import kr.co.jparangdev.webservicedemo.domain.PostsRepository;
+import kr.co.jparangdev.webservicedemo.web.dto.PostsRequestSaveDto;
+import kr.co.jparangdev.webservicedemo.web.dto.PostsRequestUpdateDto;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) // 이게무슨설정이지
 class PostsControllerTest {
