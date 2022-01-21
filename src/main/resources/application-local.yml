@@ -1,0 +1,26 @@
+spring:
+    config:
+        activate:
+            on-profile: local
+    jpa:
+        show-sql: false
+    h2:
+        console:
+            enabled: true
+    datasource:
+        url: jdbc:log4jdbc:h2:mem:webservice-demo
+        username: sa
+        driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    session:
+        store-type: jdbc
+
+logging:
+    level:
+        root: info
+        jdbc:
+            sqlonly: info
+            audit: error
+            resultset: off
+            resultsettable: off
+            connection: error
+            sqltiming: error

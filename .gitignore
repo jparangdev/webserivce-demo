@@ -39,3 +39,4 @@ out/
 
 ### oauth ###
 /src/main/resources/application-oauth.yml
+/src/main/resources/application-real-db.yml
